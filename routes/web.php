@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\ItemController as AdminItemController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 use App\Http\Controllers\Admin\BrandController as AdminBrandController;
 use App\Http\Controllers\Admin\DashboardController  as AdminDashboardController;
+use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,12 +27,13 @@ Route::prefix('admin')->name('admin.')->middleware([
     'verified',
     'admin'
 ])->group(function () {
-Route::resource('brands', AdminBrandController::class);
-Route::resource('types', AdminTypeController::class);
+    Route::resource('items', AdminItemController::class);
+    Route::resource('brands', AdminBrandController::class);
+    Route::resource('types', AdminTypeController::class);
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::resource('bookings', AdminBookingController::class);
 });
 
 Route::get('/admin', function () {
     //
 })->middleware('admin');
-

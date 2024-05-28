@@ -11,6 +11,7 @@
                 </div>
 
                 <!-- Navigation Links -->
+              
                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
@@ -25,6 +26,16 @@
                       <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link href="{{ route('admin.types.index') }}" :active="request()->routeIs('admin.types.index')">
                           {{ __('Type') }}
+                        </x-nav-link>
+                      </div>
+                      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="{{ route('admin.items.index') }}" :active="request()->routeIs('admin.items.index')">
+                          {{ __('Item') }}
+                        </x-nav-link>
+                      </div>
+                      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="{{ route('admin.bookings.index') }}" :active="request()->routeIs('admin.bookings.index')">
+                          {{ __('Booking') }}
                         </x-nav-link>
                       </div>
                 </div>
@@ -158,6 +169,12 @@
               </x-responsive-nav-link>
               <x-responsive-nav-link href="{{ route('admin.types.index') }}" :active="request()->routeIs('admin.types.index')">
                 {{ __('Type') }}
+              </x-responsive-nav-link>
+              <x-responsive-nav-link href="{{ route('admin.items.index') }}" :active="request()->routeIs('admin.items.index')">
+                {{ __('Item') }}
+              </x-responsive-nav-link>
+              <x-responsive-nav-link href="{{ route('admin.bookings.index') }}" :active="request()->routeIs('admin.bookings.index')">
+                {{ __('Booking') }}
               </x-responsive-nav-link>
         </div>
 
